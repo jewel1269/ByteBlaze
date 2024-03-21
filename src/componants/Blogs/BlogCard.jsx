@@ -7,7 +7,8 @@ const BlogCard = ({blog}) => {
             <div className="grid border rounded-2xl shadow-2xl   grid-cols-1 h-[420px] p-3">
                 <article className="flex flex-col p-3 ">
                     <a>
-                        <img alt="" className="object-cover w-full h-52 bg-gray-500" src={cover_image} />
+                    <img alt="" className="object-cover w-full h-52" src={cover_image ? cover_image : '../Layout/1695037399954-01.jpeg'} />
+
                     </a>
                     <div className="flex flex-col flex-1 p-6">
                         <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>

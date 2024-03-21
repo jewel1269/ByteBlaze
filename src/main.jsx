@@ -23,7 +23,7 @@ element:<Home></Home>
       {
         path: '/blogs',
         element:<Blogs></Blogs>,
-        loader: ()=> fetch('https://dev.to/api/articles?per_page=10&top=7')
+        loader: ()=> fetch('https://dev.to/api/articles?per_page=30&top=7')
       },
       {
         path: '/blog',
