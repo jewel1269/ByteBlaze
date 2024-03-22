@@ -7,36 +7,57 @@ import Blogs from './componants/Blogs/Blogs';
 import Bookmarks from './componants/Bookmarks';
 import Root from './layout/Root';
 import Blog from './componants/Blogs/Blog';
-
+import Content from './componants/Blogs/Content/Content';
+import Author from './componants/Blogs/Content/Author';
 
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
+    element: <Root />,
     children: [
       {
-path: '/',
-element:<Home></Home>
+        path: '/',
+        element: <Home />
       },
       {
         path: '/blogs',
-        element:<Blogs></Blogs>,
-        loader: ()=> fetch('https://dev.to/api/articles?per_page=30&top=7')
+        element: <Blogs />,
+        loader: () => fetch('https://dev.to/api/articles?per_page=20&top=10')
       },
       {
-        path: '/blog',
-        element: <Blog></Blog>
+        path: '/blog/:id',
+        element: <Blog />,
+        loader: ({ params }) => fetch(`https://dev.to/api/articles/${params.id}`),
+      },
+      {
+        path: '/author',
+        element: <Author></Author>,
+        loader: ({ params }) => fetch(`https://dev.to/api/articles/${params}`),
       },
       {
         path: '/bookmarks',
-        element:<Bookmarks></Bookmarks>
+        element: <Bookmarks />,
+       
       }
     ]
-  },
-  
+  }
 ]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

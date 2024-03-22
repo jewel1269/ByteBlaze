@@ -6,28 +6,25 @@ import BlogCard from "./BlogCard";
 
 const Blogs = () => {
     const blogs = useLoaderData();
-
-
-
     useEffect(() => {
 
     }, [])
     return (
         <div style={{ overflowY: "auto", maxHeight: "calc(100vh - 116px)" }}>
-       <div className="min-h-[calc(100vh-116px)]">
-            <div className="space-y-2 mt-10 text-center">
-                <h2 className="text-3xl font-bold">This is top blogs in last week</h2>
-                <p className="font-serif text-xl font-semibold">This is authentic site foe blogs. and we provide blogs for our viewers. <br /> <strong className="font-bold"> ❤️Thanks For Visiting❤️ </strong></p>
-            </div>
+            <div className="min-h-[calc(100vh-116px)]">
+                <div className="space-y-2 mt-10 text-center">
+                    <h2 className="text-3xl font-bold">This is top blogs in last week</h2>
+                    <p className="font-serif text-xl font-semibold">This is authentic site for blogs. and we provide blogs for our viewers. <br /> <strong className="font-bold"> ❤️Thanks For Visiting❤️ </strong></p>
+                </div>
 
-            <div className="grid grid-cols-3">
-                {
-                    blogs.map(blog => <BlogCard key={blog.id} blog={blog}></BlogCard>)
-                }
+                <div className="grid ml-12 grid-cols-3">
+                    {
+                        blogs.map(blog => <BlogCard key={blog.id} blog={blog}></BlogCard>)
+                    }
+                </div>
             </div>
         </div>
-    </div>
-        
+
     );
 };
 
